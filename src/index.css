@@ -1,0 +1,235 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.618;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.py-4 {
+  padding-block: 32px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 100;
+  border-bottom: 1px solid #444;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.card {
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #333;
+  overflow: hidden;
+}
+
+.card .images {
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  background: #222;
+}
+
+.card .content {
+  border-top: 1px solid #444;
+  padding: 15px;
+}
+
+.card .content h3 {
+  margin-top: 0;
+}
+
+.card .content p {
+  margin-top: 0;
+  line-height: 1.618;
+  font-size: 17px;
+}
+
+.btn {
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+  background: #222;
+  border: 1px solid #222;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card .content button {
+  width: 100%;
+}
+
+/* FLEXBOX LAYOUT */
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .flexbox .card {
+    flex: 1 1 33.33%;
+  }
+}
+
+@media (min-width: 992px) {
+  .flexbox .card {
+    flex: 1 1 20%;
+  }
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(4, auto);
+  grid-gap: 15px;
+  grid-template-areas:
+  "description"
+    "images"
+    "variation"
+    "actions";
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "images description"
+      "variation variation"
+      "actions actions";
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-areas:
+      "images description"
+      "images variation"
+      "images actions";
+  }
+}
+
+.product-images {
+  border: 1px solid #444;
+  width: 100%;
+  min-height: 400px;
+  grid-area: images;
+  border-radius: 6px;
+  background: #222;
+}
+
+.product-description {
+  grid-area: description;
+}
+
+.product-description h3 {
+  margin-top: 0;
+}
+
+.product-variation {
+  grid-area: variation;
+}
+
+.product-variation .variation {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+  .product-variation .variation {
+    justify-content: flex-end;
+  }
+}
+
+.product-variation .variation span {
+  min-width: 70px;
+  display: block;
+  padding: 4px 8px;
+  border: 1px solid #444;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  background: #222;
+}
+
+.product-actions {
+  grid-area: actions;
+}
+
+.product-actions .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 992px) {
+  .product-actions .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.product-actions .actions h4 {
+  margin: 0;
+}
+
+.product-actions .actions button {
+  background: #333;
+  padding-inline: 15px;
+}
+
+.sec {
+  height: 100vh;
+  background: red;
+
+  
+  display: grid;
+  place-items: center;
+}
